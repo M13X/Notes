@@ -1,21 +1,21 @@
 # General Markdown actions
 # Introduction
 
-+ [Basic Formatting Syntax](./Markdown.md#basic%20formatting%20syntax)
-+ [Styling text](#Styling%20text)
-+ [Internal Links](#Internal%20Links)
-+ [External Links](#External%20Links)
-+ [External Images](#External%20Images)
++ [Basic Formatting Syntax](./Markdown.md#basic-formatting-syntax)
++ [Styling text](#styling-text)
++ [Internal Links](#internal-links)
++ [External Links](#external-links)
++ [External Images](#external-images)
 + [Quotes](#quotes)
 + [Lists](#lists)
-+ [Task List](#Task%20List)
-+ [Nesting List](#Nesting%20List)
++ [Task List](#task-list)
++ [Nesting List](#nesting-list)
 + [Table](#table)
-+ [Inline Code](#Inline%20Code)
-+ [Code Blocks](#Code%20Blocks)
++ [Inline Code](#inline-code)
++ [Code Blocks](#code-blocks)
 + [LaTeX](#latex)
 + [Diagrams](#diagrams)
-+ [Foot Notes](#Foot%20Notes)
++ [Foot Notes](#foot-notes)
 
 
 ---
@@ -265,13 +265,13 @@ function fancyAlert(arg) {
 ---
 # Diagrams
 
-[Mermaid](./Diagrams#Mermaid) 
-+ [Graph](./Diagrams#Graph)
-+ [Sequence Diagram](./Diagrams#Sequence%20Diagram)
-+ [Git](./Diagrams%20Git)
-[GeoJSON](./Diagrams#20GeoJSON)
-[TopoJSON](./Diagrams#TopoJSON)
-[STL 3D](./Diagrams#STL%203D)
+[Mermaid](./Diagrams.md#mermaid) 
++ [Graph](./Diagrams.md#graph)
++ [Sequence Diagram](./Diagrams.md#sequence-diagram)
++ [Git](./Diagrams.md#git)
+[GeoJSON](./Diagrams.md#geojson)
+[TopoJSON](./Diagrams.md#topojson)
+[STL 3D](./Diagrams.md#stl-3d)
 
 
 ---
