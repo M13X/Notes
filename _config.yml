@@ -7,7 +7,7 @@ description: Storing notes
 collections:
   my_collection:
     output: true
-    permalink: "/Notes/Obsidian%20Vault/README.md"
+    permalink: "/Notes/Obsidian%20Vault/README.html"
 
 #Colors
 
