@@ -4,6 +4,10 @@ title: Notes
 author: M13X
 description: Storing notes
 
+layout: page
+title: "PAGE-TITLE"
+permalink: "/Notes/Obsidian%20Vault/README.md"
+
 #Colors
 
 _black: '#0D1117'
