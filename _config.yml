@@ -5,8 +5,8 @@ description: Storing notes
 
 #Colors
 
-@black: #0D1117
-@white: #fff
+@black: '#0D1117'
+@white: '#fff'
 
 @body-bg: @black
 @text-color: @white
