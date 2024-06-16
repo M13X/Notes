@@ -288,6 +288,7 @@ solid cube_corner
 endsolid
 ```
 
+<!--
 ```plantuml
 @startuml
   class Example {
@@ -300,3 +301,4 @@ endsolid
   }
 @enduml
 ```
+ -->
