@@ -269,8 +269,11 @@ function fancyAlert(arg) {
 + [Graph](./Diagrams.md#graph)
 + [Sequence Diagram](./Diagrams.md#sequence-diagram)
 + [Git](./Diagrams.md#git)
+
 [GeoJSON](./Diagrams.md#geojson)
+
 [TopoJSON](./Diagrams.md#topojson)
+
 [STL 3D](./Diagrams.md#stl-3d)
 
 
