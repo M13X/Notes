@@ -3,7 +3,7 @@ Various notes
 
 ## General
 
-[Markdown](./Obsidian%20Vault/General/README.md)
+[Markdown](./Obsidian%20Vault/General/Markdown.md)
 
 [LaTeX](./Obsidian%20Vault/General/LaTeX.md)
 
