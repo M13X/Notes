@@ -12,6 +12,7 @@
 ```
 
 In line `$\pi$` = $\pi$
+
 Centered `$$\frac{\pi}{\Sigma}$$` $$\frac{\pi}{\Sigma}$$
 $\textbf{input}$ `$\textbf{input}$`
 
@@ -21,35 +22,35 @@ $X^{yz}$  `$X^{yz}$`
 
 $X_{ij}$  `$X_{ij}$`
 
-$frac{\frac{x}{\pi}}{\sum{n}}$  `$frac{\frac{x}{\pi}}{\sum{n}}$`
+$\frac{\frac{x}{\pi}}{\sum{n}}$  `$frac{\frac{x}{\pi}}{\sum{n}}$`
 
-$\sum_{j=0}^7j^2\pi$  `$\sum_{j=0}^7j^2\pi$`
+$\sum\limits_{j=0}^7j^2\pi$  `\sum\limits_{j=0}^7j^2\pi$`
 
 $\mathcal{Hello}$  `$\mathcal{Hello}$`
 
-$\sigma\,\Sigma$  `$\sigma\,\Sigma$`
+$\sigma\space \Sigma$  `$\sigma\space \Sigma$`
 
-$\ldots\,\vdots$  `$\ldots\,\vdots$`
+$\ldots\space \vdots$  `$\ldots\space \vdots$`
 
-$\{2,\,3,\,\ldots\}$  `$\{2,\,3,\,\ldots\}$`
+$\{2,\space 3,\space \ldots\}$  `$\{2,\space 3,\space \ldots\}$`
 
 $(a)[b]\{c\}\langle d \rangle|e|\|f\|$  `$(a)[b]\{c\}\langle d \rangle|e|\|f\|$`
 ```text
 $$
-\Bigg\{\,\begin{array}{r(ight alligned)c(enter alligned)l(eft aligned)}
+\Bigg\\{\space \begin{array}{r(ight alligned)c(enter alligned)l(eft aligned)}
 	0&6&7 \\
 	9&7&3 \\
 	6&4&1 \\
-\end{array}\,\Bigg\}
+\end{array}\space \Bigg\\}
 $$
 ```
 
 $$
-\Bigg\{\,\begin{array}{rcl}
+\Bigg\\{\space \begin{array}{rcl}
 	0&6&7 \\
 	9&7&3 \\
 	6&4&1 \\
-\end{array}\,\Bigg\}
+\end{array}\space \Bigg\\}
 $$
 ## Spaces
 
@@ -57,7 +58,7 @@ $$
 | -------------- | ------------ |
 | `$x\!y$`       | $x\!y$       |
 | `$xy$`         | $xy$         |
-| `$x\,y$`       | $x\,y$       |
+| `$x\space y$`  | $x\space y$  |
 | `$x\:y$`       | $x\:y$       |
 | `$x\;y$`       | $x\;y$       |
 | `$x \quad y$`  | $x \quad y$  |
