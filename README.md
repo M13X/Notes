@@ -1,4 +1,6 @@
 # Notes
 Various notes
 
-[Read Me - Obsidian](./Obsidian%20Vault/General/README.md)
+
+<a href="/Obsidian%20Vault/General/README.md">Read Me - Obsidian</a>
+
