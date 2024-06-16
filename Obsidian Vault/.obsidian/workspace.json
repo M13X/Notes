@@ -25,26 +25,14 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "General/README.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "b6bd6a32c445b4bf",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "General/README.md",
+                "file": "General/LaTeX.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -110,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "General/README.md",
+                "file": "General/LaTeX.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -127,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "General/README.md",
+                "file": "General/LaTeX.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -150,7 +138,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "General/README.md"
+                "file": "General/LaTeX.md"
               }
             }
           }
@@ -171,12 +159,12 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "b6bd6a32c445b4bf",
+  "active": "8ec53c2502604aaf",
   "lastOpenFiles": [
-    "[].md",
     "General/README.md",
-    "basic-formatting-syntax.md",
     "General/LaTeX.md",
+    "[].md",
+    "basic-formatting-syntax.md",
     "Docker.md",
     "2024-06-16.md",
     "mmlayer.tex",
