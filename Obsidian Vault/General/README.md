@@ -86,13 +86,16 @@
 # External Links
 
 `[Obsidian Help](https://help.obsidian.md)`
+
 [Obsidian Help](https://help.obsidian.md)
 
 ---
 # External Images
 
 `![Engelbart](https://history-computer.com/ModernComputer/Basis/images/Engelbart.jpg)`
+
 `![Engelbart|100x145](https://history-computer.com/ModernComputer/Basis/images/Engelbart.jpg)`
+
 ![Engelbart|100x145](https://history-computer.com/ModernComputer/Basis/images/Engelbart.jpg)
 
 ---
@@ -254,7 +257,8 @@ function fancyAlert(arg) {
 ```
 
 ---
-# [[LaTeX]]
+
+# [LaTeX](LaTeX.md)
 
 
 ---
