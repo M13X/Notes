@@ -1,0 +1,188 @@
+{
+  "main": {
+    "id": "224e44fe5784f477",
+    "type": "split",
+    "children": [
+      {
+        "id": "17613a079a98a00f",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "1fb835ea8499d48d",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "General/LaTeX.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "8ec53c2502604aaf",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "General/README.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "b6bd6a32c445b4bf",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "General/README.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ],
+        "currentTab": 2
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "8c32b0b0964b2955",
+    "type": "split",
+    "children": [
+      {
+        "id": "8b2da9bb48f4b88a",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "787f065910a1f1f0",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "566ed0ffad0af255",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "tag:#f03c15",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "a49b3d10f78a3cec",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "3989e232dd6519fc",
+    "type": "split",
+    "children": [
+      {
+        "id": "9a6c9de6cfcd6b75",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "08768c8dcd22e84c",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "General/README.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "aca99af94cc8c2bd",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "General/README.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "14ea38155a989183",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "11b6df2fc0352acf",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "General/README.md"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "b6bd6a32c445b4bf",
+  "lastOpenFiles": [
+    "[].md",
+    "General/README.md",
+    "basic-formatting-syntax.md",
+    "General/LaTeX.md",
+    "Docker.md",
+    "2024-06-16.md",
+    "mmlayer.tex",
+    "[.md",
+    "PresentationCloud.drawio.svg",
+    "General",
+    "First note.md"
+  ]
+}

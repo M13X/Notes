@@ -1,0 +1,7 @@
+/* Change the LaTeX font and increase the font size */
+.math-block, .math-inline {
+    font-family: "Consolas";
+    font-size: 1.5em; /* Adjust the font size as needed */
+}
+
+.MathJax { font-size: 1.5em; }
