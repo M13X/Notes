@@ -4,7 +4,7 @@
 + [[#Styling text]]
 + [[#Internal Links]]
 + [[#External Links]]
-+ [[#External Images]]
++ [External Images](#external-images)
 + [Quotes](#quotes)
 + [Lists](#lists)
 + [[#Task List]]
