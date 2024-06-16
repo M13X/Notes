@@ -45,74 +45,94 @@ Centered `$$\frac{\pi}{\Sigma}$$` $$\frac{\pi}{\Sigma}$$
 | `$${\color{white}White}$$`                   | $${\color{white}White}$$                   |
 
 `$\textbf{input}$`
+
 $\textbf{input}$
 
 `$\mathcal{Hello}$`
+
 $\mathcal{Hello}$
 
 `$\sigma\space \Sigma$`
+
 $\sigma\space \Sigma$
 
 `$\ldots\space \vdots$`
+
 $\ldots\space \vdots$
 
 `$\{2,\space 3,\space \ldots\}$`
+
 $\{2,\space 3,\space \ldots\}$
 
 `$(a)[b]\{c\}\langle d \rangle|e|\|f\|$`
+
 $(a) \space [b] \space \{c\} \space \langle d \rangle \space |e| \space \|f\|$
 
 `$\lbrace \space \rbrace \space \underbrace{x-y}_z \space \overbrace{x+y}^z$`
+
 $\lbrace \space \rbrace \space \underbrace{x-y}_z \space \overbrace{x+y}^z$
 
 
 ---
 # Functions
 
-#### Fraction
+## Fraction
  `$\frac{x}{\pi}$`
+ 
 $\frac{x}{\pi}$
 
-#### Power
+## Power
 `$X^{yz}$`
+
 $X^{yz}$ 
 
-#### Index
+## Index
 `$X_{ij}$`
+
 $X_{ij}$
 
-#### Logarithm
+## Logarithm
 `$\log_b a$`
+
 $\log_b a$
 
 `$\ln{x}$`
+
 $\ln{x}$
 
-#### Sum
+## Sum
 `$f(x) = \sum\limits_{i=0}^{n} a_i x^i$`
+
 $f(x) = \sum\limits_{i=0}^{n} a_i x^i$
-#### Product
+## Product
 `$g(x) = \prod\limits_{i=0}^{n} a_i x^i$`
+
 $g(x) = \prod\limits_{i=0}^{n} a_i x^i$
 
-#### Square
+## Square
 `$\sqrt[n]{x}$`
+
 $\sqrt[n]{x}$
 
-#### Limits
+## Limits
 `\lim_{x \to +\infty}`, `\inf_{x > s}` and `\sup_K`
+
 $\lim_{x \to +\infty}, \inf_{x > s} and \sup_K$
 
-#### Integral
+## Integral
 `$\int\limits_a^b f(x)\,dx.$`
+
 $\int\limits_a^b f(x)\,dx.$
 `\int\limits_0^1 \! \int\limits_0^1 x^2 y^2\,dx\,dy.`
+
 $\int\limits_0^1 \! \int\limits_0^1 x^2 y^2\,dx\,dy.$
-#### Derivative
+
+## Derivative
 `\frac{du}{dt}` and `\frac{d^2 u}{dx^2}`
+
 $\frac{du}{dt} \space \mathcal{and} \space \frac{d^2 u}{dx^2}$
 
-#### Matrix
+## Matrix
 
 ```text
 $$
@@ -133,7 +153,7 @@ $$
 $$
 
 
-#### Trigonometric functions
+# Trigonometric functions
 
 | Syntax     | Result    |
 | ---------- | --------- |
