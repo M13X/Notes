@@ -4,9 +4,10 @@ title: Notes
 author: M13X
 description: Storing notes
 
-layout: page
-title: "PAGE-TITLE"
-permalink: "/Notes/Obsidian%20Vault/README.md"
+collections:
+  my_collection:
+    output: true
+    permalink: "/Notes/Obsidian%20Vault/README.md"
 
 #Colors
 
