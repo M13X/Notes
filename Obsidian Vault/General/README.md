@@ -10,11 +10,11 @@
 + [Task List](#task-list)
 + [Nesting List](#nesting-list)
 + [Table](#table)
-+ [#Inline Code](#inline-code)
-+ [#Code Blocks](#code-blocks)
++ [Inline Code](#inline-code)
++ [Code Blocks](#code-blocks)
 + [LaTeX](#latex)
 + [Diagrams](#diagrams)
-+ [#Foot Notes](#foot-notes)
++ [Foot Notes](#foot-notes)
 
 
 ---
@@ -86,12 +86,14 @@
 # External Links
 
 `[Obsidian Help](https://help.obsidian.md)`
+[Obsidian Help](https://help.obsidian.md)
 
 ---
 # External Images
 
 `![Engelbart](https://history-computer.com/ModernComputer/Basis/images/Engelbart.jpg)`
 `![Engelbart|100x145](https://history-computer.com/ModernComputer/Basis/images/Engelbart.jpg)`
+![Engelbart|100x145](https://history-computer.com/ModernComputer/Basis/images/Engelbart.jpg)
 
 ---
 # Quotes
