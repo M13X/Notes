@@ -1,7 +1,7 @@
 # General Markdown actions
 # Introduction
 
-+ [Basic Formatting Syntax](#Basic%20Formatting%20Syntax)
++ [Basic Formatting Syntax](./Markdown.md#Basic%20Formatting%20Syntax)
 + [Styling text](#Styling%20text)
 + [Internal Links](#Internal%20Links)
 + [External Links](#External%20Links)
