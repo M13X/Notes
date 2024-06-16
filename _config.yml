@@ -1,1 +1,12 @@
-markdown: kramdown
+theme: minima
+title: Notes
+author: M13X
+description: Storing notes
+
+// Colors
+
+@black: #0D1117
+@white: #fff
+
+@body-bg: @black
+@text-color: @white
