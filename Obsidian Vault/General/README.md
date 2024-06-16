@@ -1,20 +1,20 @@
 # Introduction
 
-+ [[#Basic Formatting Syntax]]
-+ [[#Styling text]]
-+ [[#Internal Links]]
-+ [[#External Links]]
-+ [[#External Images]]
++ [Basic Formatting Syntax](#basic-formatting-syntax)
++ [Styling text](#styling-text)
++ [Internal Links](#internal-links)
++ [External Links](#external-links)
++ [External Images](#external-images)
 + [Quotes](#quotes)
 + [Lists](#lists)
-+ [[#Task List]]
-+ [[#Nesting List]]
++ [Task List](#task-list)
++ [Nesting List](#nesting-list)
 + [Table](#table)
-+ [[#Inline Code]]
-+ [[#Code Blocks]]
++ [Inline Code](#inline-code)
++ [Code Blocks](#code-blocks)
 + [LaTeX](#latex)
 + [Diagrams](#diagrams)
-+ [[#Foot Notes]]
++ [Foot Notes](#foot-notes)
 
 
 ---
@@ -87,11 +87,16 @@
 
 `[Obsidian Help](https://help.obsidian.md)`
 
+[Obsidian Help](https://help.obsidian.md)
+
 ---
 # External Images
 
 `![Engelbart](https://history-computer.com/ModernComputer/Basis/images/Engelbart.jpg)`
+
 `![Engelbart|100x145](https://history-computer.com/ModernComputer/Basis/images/Engelbart.jpg)`
+
+![Engelbart|100x145](https://history-computer.com/ModernComputer/Basis/images/Engelbart.jpg)
 
 ---
 # Quotes
@@ -252,7 +257,8 @@ function fancyAlert(arg) {
 ```
 
 ---
-# [[LaTeX]]
+
+# [LaTeX](LaTeX.md)
 
 
 ---
