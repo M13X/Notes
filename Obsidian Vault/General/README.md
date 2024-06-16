@@ -1,3 +1,8 @@
+---
+layout: default
+---
+
+
 # Introduction
 
 + [Basic Formatting Syntax](#basic-formatting-syntax)
