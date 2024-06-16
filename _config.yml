@@ -8,5 +8,5 @@ description: Storing notes
 _black: '#0D1117'
 _white: '#fff'
 
-body-bg: @black
-text-color: @white
+body-bg: _black
+text-color: _white
