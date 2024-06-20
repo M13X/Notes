@@ -2,6 +2,7 @@
 
 ## Mermaid 
 
+Reference: https://mermaid.js.org/
 Installed version:
 ```mermaid 
 info
