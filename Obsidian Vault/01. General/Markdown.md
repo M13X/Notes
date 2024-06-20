@@ -1,7 +1,7 @@
 # General Markdown actions
 # Introduction
 
-+ [Basic Formatting Syntax](./Markdown.md#basic-formatting-syntax)
++ [Basic Formatting Syntax](Markdown.md#basic-formatting-syntax)
 + [Styling text](#styling-text)
 + [Internal Links](#internal-links)
 + [External Links](#external-links)
@@ -265,16 +265,16 @@ function fancyAlert(arg) {
 ---
 # Diagrams
 
-[Mermaid](./Diagrams.md#mermaid) 
-+ [Graph](./Diagrams.md#graph)
-+ [Sequence Diagram](./Diagrams.md#sequence-diagram)
-+ [Git](./Diagrams.md#git)
+[Mermaid](Diagrams.md#mermaid) 
++ [Graph](Diagrams.md#graph)
++ [Sequence Diagram](Diagrams.md#sequence-diagram)
++ [Git](Diagrams.md#git)
 
-[GeoJSON](./Diagrams.md#geojson)
+[GeoJSON](Diagrams.md#geojson)
 
-[TopoJSON](./Diagrams.md#topojson)
+[TopoJSON](Diagrams.md#topojson)
 
-[STL 3D](./Diagrams.md#stl-3d)
+[STL 3D](Diagrams.md#stl-3d)
 
 
 ---
