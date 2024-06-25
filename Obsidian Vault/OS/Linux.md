@@ -1,19 +1,38 @@
+# Linux
 
+# Introduction
 
-Shortcuts
+### WIP
 
- 
+# Hotkeys
+## General
 
+| Hotkey       | Description               |
+| ------------ | ------------------------- |
+| `Ctrl+Alt+T` | Open Terminal             |
+| `Ctrl+L`     | Jump few lines            |
+| `Ctrl+C`     | Kill active process       |
+| `Ctrl+K`     | Exit shell                |
+| `Ctrl+Z`     | Put process in background |
 
-|            |                |
-| ---------- | -------------- |
-| Ctrl+Alt+T | Open Terminal  |
-| Ctrl+L     | Jump few lines |
+## Navigation
 
-Command structure
+| Hotkey   | Description             |
+| -------- | ----------------------- |
+| `Ctrl+A` | Go to the front of line |
+| `Ctrl+E` | Go to the end of line   |
+| `Alt+F`  | Go forward one word     |
+| `Alt+B`  | Go back one word        |
+## Command edit
 
+| Hotkey          | Description            |
+| --------------- | ---------------------- |
+| `Ctrl+X Ctrl+E` | Open line in `$EDITOR` |
+|                 |                        |
 
-|                             |                                                  |
+# Command structure
+
+| Structure                   | Description                                      |
 | --------------------------- | ------------------------------------------------ |
 | `command options input`     |                                                  |
 | `[ ]`                       | Optional                                         |
@@ -31,6 +50,8 @@ Command structure
 |                             |                                                  |
 | `command \| xargs command2` | Converts stdout into command line arguments      |
 
+## T pipe
+
 ```bash
 # .bash_aliases
 # A command that can be called by its custom name
@@ -47,7 +68,7 @@ Command1[Command 1] --> tee[tee file.txt] --> Command2[Command 2]
 
 tee --> file[file.txt] 
 ```
-
+## Wildcards
 
 | Wildcards      | Description                                              |
 | -------------- | -------------------------------------------------------- |
@@ -59,12 +80,9 @@ tee --> file[file.txt]
 | `{2019..2024}` | Expands what it is inside. All numbers from 2019 to 2024 |
 | `{1,2}_{A,B}`  | Combinations. Will have 4 results                        |
 |                |                                                          |
+## Useful commands
 
-
-
-
-
-|                                                      |                                                                    |
+| Command                                              | Description                                                        |
 | ---------------------------------------------------- | ------------------------------------------------------------------ |
 | `find`                                               | Searches files and directories without a database                  |
 | `cat`                                                | Print and concatenate files                                        |
@@ -81,13 +99,9 @@ tee --> file[file.txt]
 | `month` `* or number or ex:JAN`                      |                                                                    |
 | `day_of_week` `* or number or ex:MON`                | More details at [Crontab.guru](https://crontab.guru)               |
 
+## Archiving
 
-
-
-Archiving
-
-
-|                                  |                                                                                |
+| Command                          | Description                                                                    |
 | -------------------------------- | ------------------------------------------------------------------------------ |
 | `tar -cvf [name].tar [files]...` | Create preparation archive with the name and files mentioned and output result |
 | `tar -xvf [tarfile]`             | Extract the files                                                              |
