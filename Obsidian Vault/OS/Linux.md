@@ -119,8 +119,10 @@ tee --> file[file.txt]
 
 ## File Permissions
 
-$$\underbrace{-}_{Begin}\underbrace{---}_{Owner:rwx}\,\underbrace{---}_{Group:rwx}\,\underbrace{---}_{Others:rwx}$$
-Begin:
+$\underbrace{-}\_{\text{First}}\,\underbrace{---}\_{\text{Owner:rwx}}\,\underbrace{---}\_{\text{Group:rwx}}\,\underbrace{---}\_{\text{Others:rwx}}$
+
+
+First:
 + regular file: `-`
 + directory: `d`
 + symbolic-link: `l`
