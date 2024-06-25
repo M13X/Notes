@@ -28,7 +28,6 @@
 | Hotkey          | Description            |
 | --------------- | ---------------------- |
 | `Ctrl+X Ctrl+E` | Open line in `$EDITOR` |
-|                 |                        |
 
 # Command structure
 
@@ -45,12 +44,14 @@
 | `0<` `<`                    | StdIn                                            |
 | `1>` `1>>` `<` `<<`         | StdOut                                           |
 | `2>` `2>>`                  | StdError                                         |
-|                             |                                                  |
+| `&>`                        | Redirect both StdIn and StdOut                   |
 | `command1 \| command2`      | Pipe the StdOut of command1 to StdIn of command2 |
 |                             |                                                  |
 | `command \| xargs command2` | Converts stdout into command line arguments      |
 
 ## T pipe
+
+Tee is used to redirect an output towards two inputs.
 
 ```bash
 # .bash_aliases
@@ -79,25 +80,29 @@ tee --> file[file.txt]
 | `{}`           | [領域展開](https://youtu.be/x9EI1aLFfAo)                     |
 | `{2019..2024}` | Expands what it is inside. All numbers from 2019 to 2024 |
 | `{1,2}_{A,B}`  | Combinations. Will have 4 results                        |
-|                |                                                          |
+
 ## Useful commands
 
-| Command                                              | Description                                                        |
-| ---------------------------------------------------- | ------------------------------------------------------------------ |
-| `find`                                               | Searches files and directories without a database                  |
-| `cat`                                                | Print and concatenate files                                        |
-| `locate`                                             | Print files and directories according to the search using database |
-| `updatedb`                                           | Update database for `locate` manually                              |
-| `file`                                               | Check the type of a file                                           |
-| `which [command]`                                    | Locate command                                                     |
-|                                                      |                                                                    |
-| `crontab -e`                                         | Schedule tasks                                                     |
-| `minute hour day_of_month month day_of_week command` |                                                                    |
-| `*`                                                  | * For anything. Other wildcards will not work                      |
-| `0,15,30,45`                                         | Example that it will run for each mentioned minute                 |
-| `*/[number]`                                         | Run every `number` minute                                          |
-| `month` `* or number or ex:JAN`                      |                                                                    |
-| `day_of_week` `* or number or ex:MON`                | More details at [Crontab.guru](https://crontab.guru)               |
+| Command                   | Description                                                        |
+| ------------------------- | ------------------------------------------------------------------ |
+| `find`                    | Searches files and directories without a database                  |
+| `cat`                     | Print and concatenate files                                        |
+| `grep <text> <file/text>` | Searches `text` in `file/text`                                     |
+| `locate`                  | Print files and directories according to the search using database |
+| `updatedb`                | Update database for `locate` manually                              |
+| `file`                    | Check the type of a file                                           |
+| `which [command]`         | Locate command                                                     |
+
+## Scheduling
+| Command                                              | Description                                          |
+| ---------------------------------------------------- | ---------------------------------------------------- |
+| `crontab -e`                                         | Schedule tasks                                       |
+| `minute hour day_of_month month day_of_week command` |                                                      |
+| `*`                                                  | * For anything. Other wildcards will not work        |
+| `0,15,30,45`                                         | Example that it will run for each mentioned minute   |
+| `*/[number]`                                         | Run every `number` minute                            |
+| `month` `* or number or ex:JAN`                      |                                                      |
+| `day_of_week` `* or number or ex:MON`                | More details at [Crontab.guru](https://crontab.guru) |
 
 ## Archiving
 
@@ -111,3 +116,26 @@ tee --> file[file.txt]
 | `bunzip2 [name].tar.bz2`         | Unarchive                                                                      |
 | `zip [name].zip [files]...`      | Create zip                                                                     |
 | `unzip [archive].zip`            | Unarchive                                                                      |
+
+## File Permissions
+
+$$\underbrace{-}_{Begin}\underbrace{---}_{Owner:rwx}\,\underbrace{---}_{Group:rwx}\,\underbrace{---}_{Others:rwx}$$
+Begin:
++ regular file: `-`
++ directory: `d`
++ symbolic-link: `l`
+
+Groups:
++ User: `u`
++ Group: `g`
++ Others: `o`
+
+Permissions:
++ Read(`r`) = `4`
++ Write(`w`) = `2`
++ Execute(`x`) = `1`
+
+Examples:
+`chmod 755 filename`=> Owner(`4`+`2`+`1`)=full access, Group and Others(`1`+`4`)=`read and execute`
+It is the same thing as:
+`chmod u+rwx,g+rx,o+rx filename`
