@@ -5,11 +5,11 @@ It is composed by:
 + Physical Connection (wires, cables, wireless media)
 + Logical Connection (data transportation)
 
-#### Rules
+## Rules
 + Computers in a network must use the same communication protocol
 + Computers in a network must be able to know the source and destination of data
 
-#### Sizes of computer networks
+## Sizes of computer networks
 + PAN: Personal Area Network - Ex: Phone connected to Laptop through Bluetooth
 + LAN: Local Area Network - Ex: Home network with router. Laptop, Phone, PC, Printer
 + WLAN: Wireless Local Area Network - Ex: Home network but everything is wireless
@@ -17,19 +17,19 @@ It is composed by:
 + MAN: Metropolitan Area Network - Ex: A city
 + WAN: Wide Area Network - Ex: Multiple cities / countries
 
-#### Architecture
-##### Peer-to-Peer
+# Architecture
+## Peer-to-Peer
 + No dedicated servers
 + No centralized control
 + Devices can share resources freely
 + Computers can take roles of client or server
 
-##### Client-Server
+## Client-Server
 + Composed of client and server
 	+ Servers provide resources
 	+ Clients receive resources
 + Servers have centralized control over network resources
-#### Protocols
+## Protocols
 + Physical Protocols describe the wiring, connections and signal
 + Logical Protocols describe how and when data is sent/received
 	+ Web: HTTP
@@ -70,7 +70,9 @@ Physical address of network adaptor and each one has unique MAC
 + Part of TCP/IP Layer 1
 
 $\underbrace{00-B0-D0}_{OUI} - \overbrace{63-C2-26}^{UAA}$
+
 OUI: Organizationally Unique Identifier assigned by IEEE (ex: Dell)
+
 UAA: Universally Administered Address. Unique for each device of an organization
 
 Can check the organization through [lookup sites](https://dnschecker.org/mac-lookup.php)
