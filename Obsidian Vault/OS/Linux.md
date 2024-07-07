@@ -31,23 +31,27 @@
 
 # Command structure
 
-| Structure                   | Description                                      |
-| --------------------------- | ------------------------------------------------ |
-| `command options input`     |                                                  |
-| `[ ]`                       | Optional                                         |
-| `< >`                       | Mandatory                                        |
-| `-a -b -c == -abc`          | Short form options can be linked together        |
-| `--optionA --optionB`       | Long form options cannot be linked together      |
-| `[-a \| -b]`                | One or the other. Cannot use both                |
-| `...`                       | Can have multiple inputs                         |
-|                             |                                                  |
-| `0<` `<`                    | StdIn                                            |
-| `1>` `1>>` `<` `<<`         | StdOut                                           |
-| `2>` `2>>`                  | StdError                                         |
-| `&>`                        | Redirect both StdIn and StdOut                   |
-| `command1 \| command2`      | Pipe the StdOut of command1 to StdIn of command2 |
-|                             |                                                  |
-| `command \| xargs command2` | Converts stdout into command line arguments      |
+| Structure                   | Description                                                     |
+| --------------------------- | --------------------------------------------------------------- |
+| `command options input`     |                                                                 |
+| `[ ]`                       | Optional                                                        |
+| `< >`                       | Mandatory                                                       |
+| `-a -b -c` == `-abc`        | Short form options can be linked together                       |
+| `--optionA --optionB`       | Long form options cannot be linked together                     |
+| `[-a \| -b]`                | One or the other. Cannot use both                               |
+| `...`                       | Can have multiple inputs                                        |
+|                             |                                                                 |
+| `0<` `<`                    | StdIn                                                           |
+| `1>` `1>>`                  | StdOut                                                          |
+| `2>` `2>>`                  | StdError                                                        |
+| `&>`                        | Redirect both StdIn and StdOut                                  |
+| `&?`                        | Get exit status                                                 |
+| `<< <text>`                 | The script will stop when it encounters `text`<br>Here Document |
+| `<<< <string>`              | Redirect input of string<br>Here String                         |
+|                             |                                                                 |
+| `command1 \| command2`      | Pipe the StdOut of command1 to StdIn of command2                |
+|                             |                                                                 |
+| `command \| xargs command2` | Converts stdout into command line arguments                     |
 
 ## T pipe
 
@@ -83,15 +87,23 @@ tee --> file[file.txt]
 
 ## Useful commands
 
-| Command                   | Description                                                        |
-| ------------------------- | ------------------------------------------------------------------ |
-| `find`                    | Searches files and directories without a database                  |
-| `cat`                     | Print and concatenate files                                        |
-| `grep <text> <file/text>` | Searches `text` in `file/text`                                     |
-| `locate`                  | Print files and directories according to the search using database |
-| `updatedb`                | Update database for `locate` manually                              |
-| `file`                    | Check the type of a file                                           |
-| `which [command]`         | Locate command                                                     |
+| Command                    | Description                                                                                                         |
+| -------------------------- | ------------------------------------------------------------------------------------------------------------------- |
+| `find`                     | Searches files and directories without a database                                                                   |
+| `cat`                      | Print and concatenate files                                                                                         |
+| `grep <text> <file/text>`  | Searches `text` in `file/text`                                                                                      |
+| `locate`                   | Print files and directories according to the search using database                                                  |
+| `updatedb`                 | Update database for `locate` manually                                                                               |
+| `file`                     | Check the type of a file                                                                                            |
+| `which [command]`          | Locate command                                                                                                      |
+| `source [script]`          | Run script in the base shell instead of subshell                                                                    |
+| `bc`                       | Enter math script                                                                                                   |
+| `cut`                      | Prints selected parts of the lines from files                                                                       |
+| `apropos [name]`           | Use partial `name` to find command or its description from manual                                                   |
+| `whatis [command]`         | See description of `command`                                                                                        |
+| `compgen -c [command]`     | Same as `apropos`, but searches only for command name                                                               |
+| `wc`                       | Get line, word, character count                                                                                     |
+| `sudo apt purge <package>` | Uninstalls and removes configuration files for `package`<br>If want to keep configs use `remove` instead of `purge` |
 
 ## Scheduling
 | Command                                              | Description                                          |
