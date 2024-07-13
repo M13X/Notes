@@ -53,7 +53,7 @@ on:
       - name: Download code
         # Runs an action defined on a github repository / local
         uses: actions/checkout@v4
-	  - name: Upload artifacts
+      - name: Upload artifacts
         uses: actions/upload-artifact@v4
         # 'Arguments' for the action
         with:
@@ -66,7 +66,7 @@ on:
   downloading-artifacts:
     # Waits for 'creating-artifacts' to finish succesfully
     # Otherwise there wouldn't be anything to download
-	needs: second-job
+    needs: second-job
     runs-on: ubuntu-latest
     steps:
      - name: Get build artifacts
@@ -94,7 +94,7 @@ jobs:
         uses: actions/checkout@v4
         # Since dependencies are installed on every job
         # is a good idea to cache them to speed up the workflow
-	  - name: Cache dependencies
+      - name: Cache dependencies
         # Naming the step so we can recognize and use it in other places
         id: my-cache
         uses: actions/cache@v4
@@ -193,23 +193,17 @@ jobs:
           node-version: ${{ matrix.node-version }}
 ```
 
-<details>
-<summary>Combinations what will run from example</summary>
-<details>
-<summary>Ubuntu</summary>
-+ ubuntu-latest with node v12
-+ ubuntu-latest with node v14
-+ ubuntu-latest with node v16
-+ ubuntu-latest with node v18 - because of `include`
-</details>
-<details>
-<summary>Windows</summary>
-+ ~~windows-latest with node v12~~ - avoided because of `exclude`
-+ windows-latest with node v14
-+ windows-latest with node v16
-+ ~~windows-latest with node v18~~ - is not defined in strategy or `include`
-</details>
-</details>
+Combinations what will run from example
++ Ubuntu
+	+ ubuntu-latest with node v12
+	+ ubuntu-latest with node v14
+	+ ubuntu-latest with node v16
+	+ ubuntu-latest with node v18 - because of `include`
++ Windows
+	+ ~~windows-latest with node v12~~ - avoided because of `exclude`
+	+ windows-latest with node v14
+	+ windows-latest with node v16
+	+ ~~windows-latest with node v18~~ - is not defined in strategy or `include`
 
 # Environment variables
 
