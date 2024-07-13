@@ -1,31 +1,38 @@
 
 # General
-`git help <command>` Get manual for command
-`git init` Initialize local project to use git
-`git status` Check the status of repository
-`git log` Check the commit logs
++ `git help <command>` Get manual for command
++ `git init` Initialize local project to use git
++ `git status` Check the status of repository
++ `git log` Check the commit history
++ `git reflog` Check commands log
 
-`git config --global --list`
-`git config --global -e`
++ `git config --global --list`
++ `git config --global -e`
 
 
-`git add <file(s)/folder/.>` Stages the files
-`git commit` Commits the staged files
-+ `-m "<commit-message>"` Add commit message directly
-+  `--amend` Prompts to change latest commit message
-`git checkout <id/branch-name>` Move to the `id` commit or `branch-name`
-`git revert <id>` Creates a new commit that reverts the changes made in `id`
-`git reset --hard <id>` Deletes all commits after `<id>`
++ `git add <file(s)/folder/.>` Stages the files
++ `git commit` Commits the staged files
+	+ `-m "<commit-message>"` Add commit message directly
+	+  `--amend` Prompts to change latest commit message
++ `git checkout <id/branch-name>` Move to the `id` commit or `branch-name`
++ `git revert <id>` Creates a new commit that reverts the changes made in `id`
++ `git reset` 
+	+ `--soft <commit-id>` Moves to `<id>`
+	+ `--mixed <commit-id>` Resets the staging area and moves to `<id>`
+	+ `--hard <commit-id>` Deletes all commits after `<id>`
+	+ `<reflog-id>` Turns back at the specified command
 
++ `HEAD^<step>`
 # Branches
 
-`git branch` Lists all existing branches
-`git branch <name>` Creates branch from current commit
-`git checkout -b <name>` Creates branch from current commit and moves to it
-`git branch -D <name>` Delete branch
-`git merge <target-branch>` Merge `<target-branch>` into current branch
-+ `--no-ff` (No Fast Forward) Keeps the other branch commits visually
-+ By default, if there are no new commits on target branch, all the commits will be copied
++ `git branch` Lists all existing branches
+	+ `<name>` Creates branch from current commit
+	+ `-D <name>` Delete branch
+	+ `-a` Lists all branches including remote
++ `git checkout -b <name>` Creates branch from current commit and moves to it
++ `git merge <target-branch>` Merge `<target-branch>` into current branch
+	+ `--no-ff` (No Fast Forward) Keeps the other branch commits visually
+	+ By default, if there are no new commits on target branch, all the commits will be copied
 # .gitignore
 
 ```sh
@@ -91,7 +98,7 @@ Signing commits: [Github GPG](https://docs.github.com/en/authentication/managing
 + `git config --global mergetool.prompt false`
 
 + `git config --global diff.tool <tool-name>`
-+ `git config --global difftool.<tool-name>.path "full/path/to/tool.exe`
++ `git config --global difftool.<tool-name>.path "full/path/to/tool.exe"`
 + `git config --global diftool.prompt false`
 
 + `git diff` Resume for differences
@@ -154,6 +161,12 @@ Signing commits: [Github GPG](https://docs.github.com/en/authentication/managing
 + `git show <tag-name>` Shows details about tag
 + `git tag --delete <tag-name>` Removes tag
 
+# Cherry-pick
+
+> [!NOTE]
+> Brings 1 commit to a branch
+
++ `git cherry-pick <commit-id>` Copies the commit to current branch
 # Git areas
 
 Untracked - Working area - Staged area - Repository - Remote

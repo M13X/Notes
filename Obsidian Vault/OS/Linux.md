@@ -15,6 +15,14 @@
 | `Ctrl+K`     | Exit shell                |
 | `Ctrl+Z`     | Put process in background |
 
+| Hotkey        | Description           |
+| ------------- | --------------------- |
+| `Ctrl+U`      | Clear up to beginning |
+| `Ctrl+K`      | Clear to the end      |
+| `Ctrl+Y`      | Revert                |
+| `Ctrl+W`      | Delete 1 word         |
+| `Alt+Shift+#` | Comment the line      |
+
 ## Navigation
 
 | Hotkey   | Description             |
