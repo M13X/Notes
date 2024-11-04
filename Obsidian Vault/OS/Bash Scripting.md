@@ -1,5 +1,5 @@
-# Bash Scripting
 
+# Bash Scripting
 ## Variables
 
 | Command               | Description                                                                                   |
