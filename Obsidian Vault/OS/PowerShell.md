@@ -142,6 +142,7 @@ Write-Host "File created at path $Path"
 
 ### Flow control
 
+If/Else
 ```powershell
 Param(
    [Int]$Value
@@ -157,6 +158,92 @@ If ($Value -lt 0)
 }
 ```
 
+| Notation      | Meaning                                                  |
+| ------------- | -------------------------------------------------------- |
+| `-eq`         | Equal                                                    |
+| `-ne`         | Not equal                                                |
+| `-lt`         | Less than                                                |
+| `-le`         | Less or equals                                           |
+| `-gt`         | Greater than                                             |
+| `-ge`         | Greater or equals                                        |
+| `-contains`   | Checks an array/list if it contains (not case sensitive) |
+| `-c[command]` | Case sensitive (ex: `-ceq`, `-ccontains`)                |
+|               |                                                          |
+Switch
+```powershell
+$filePath = "D:\myfile.txt" # file that contains multiple names on different rows
+$data = Get-Content -Path $filePath
+$firstName = $data[0]
+
+switch($firstName)
+{
+  "Tim"
+  {
+    Write-Output "My name is Tim"
+    break
+  }
+  "Danny"
+  {
+    Write-Output "My name is Danny"
+    break
+  }
+  default
+  {
+    Write-Output "Didn't find the name"
+    break
+  }
+}
+
+switch ($data.Count)
+{
+  {$_ -lt 2}
+  {
+    Write-Output "This file has less than 2 lines (names)".
+    break
+  }
+  {$_ -lt 10}
+  {
+    Write-Output "This file has less than 10 lines (names)"
+    break
+  }
+  Default
+  {
+    Write-Output "This file has more than 10 lines"
+    break
+  }
+}
+```
+
+### Loops
+#### For-Each
+```powershell
+$filePath = "D:\myfile.txt"
+$data = Get-Content -Path $filePath
+$folderPath = "D:\ForEachTest"
+
+foreach($name in $data)
+{
+    if((Test-Path -Path "$folderPath\$name") -eq $false)
+    {
+      New-Item -Path "$folderPath" -Name $name -ItemType Directory
+    }
+    else
+    {
+        Write-Output "Folder `"$name`" already exists"
+    }
+}
+
+$data | ForEach-Object -Process
+{
+    Write-Output $_
+}
+
+$data.ForEach(
+    {
+        Write-Output $_
+    }
+)
+```
 ### Error handling
 
 ```powershell
@@ -168,3 +255,6 @@ Try {
      Write-Host "Something else went wrong: $($_.exception.message)"
    }
 ```
+
+### Pipelines
+
