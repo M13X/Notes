@@ -113,6 +113,21 @@ tee --> file[file.txt]
 | `wc`                       | Get line, word, character count                                                                                     |
 | `sudo apt purge <package>` | Uninstalls and removes configuration files for `package`<br>If want to keep configs use `remove` instead of `purge` |
 
+## Monitoring
+
+| Command          | Description                        |
+| ---------------- | ---------------------------------- |
+| `df`             | Display disk space                 |
+| `du`             | Display disk occupied by files     |
+| `free`           | Display RAM status                 |
+| `top`            | Task manager. Press h for commands |
+| `ps`             | List running processes             |
+| `lsblk`          | Display mounts                     |
+| `cat /etc/fstab` | Display automatic mounts at boot   |
+| `netstat -tulpn` | Display network connections        |
+
+
+
 ## Scheduling
 | Command                                              | Description                                          |
 | ---------------------------------------------------- | ---------------------------------------------------- |
@@ -139,7 +154,8 @@ tee --> file[file.txt]
 
 ## File Permissions
 
-$\underbrace{-}\_{\text{First}}\,\underbrace{---}\_{\text{Owner:rwx}}\,\underbrace{---}\_{\text{Group:rwx}}\,\underbrace{---}\_{\text{Others:rwx}}$
+`ls -l`
+$\underbrace{-}\_{\text{First}}\,\underbrace{---}\_{\text{Owner:rwx}}\,\underbrace{---}\_{\text{Group:rwx}}\,\underbrace{---}\_{\text{Others:rwx}}, user, group$
 
 
 First:
@@ -161,3 +177,65 @@ Examples:
 `chmod 755 filename`=> Owner(`4`+`2`+`1`)=full access, Group and Others(`1`+`4`)=`read and execute`
 It is the same thing as:
 `chmod u+rwx,g+rx,o+rx filename`
+
+### Owners
+Single owner:
+`chown username:groupname /path/to/file` (Username/Groupname can be left empty if not needed) ex: `chown :mygroup`
+
+Multiple owners:
+Add group: `setfacl -m g:groupx:rw filename`
+Add user: `setfacl -m u:username:rw filename`
+Remove group: `setfacl -x g:groupx filename`
+Remove ACL: `setfacl -b filename`
+Print owners: `getfacl filename`
+
+### Users
+Create user: `adduser username`
+Delete user: `deluser --remove-home username`
+### Groups
+View all groups: `groups`
+View all groups for a specific user: `groups username`
+View all users for a  specific group: `getent group groupname`
+Create group: `groupadd groupname`
+Delete group: `groupdel groupname`
+Add user to group: `usermod -aG groupname username`
+Remove user from group: `gpasswd -d username groupname`
+
+## Mount
+
+| Command                                | Description                                                           |
+| -------------------------------------- | --------------------------------------------------------------------- |
+| `lsblk`                                | Display mounts                                                        |
+| `lvmdiskscan`                          | All block devices LVM can interact with will have LVM text at the end |
+| `fdisk`                                | Partition the disk                                                    |
+| `pvs`                                  | Display all LVM PVs (Physical Volumes) and the VG they are part of    |
+| `vgs`                                  | Display all VGs (Volume Groups)                                       |
+| `vgs -o +lv_size,lv_volume`            | Display  all logical volumes and the relationship with volume group   |
+| `lvs`                                  | Display all LVs (Logical Volumes)                                     |
+| `mkfs.[format] /dev/VGname/LVname`     | Format volume (ex: mkfs.ext4)                                         |
+| `mkdir -p /mnt/LVname`                 | Create mount point for LV                                             |
+| `mount /dev/VGname/LVname /mnt/LVname` | Mount LV to point                                                     |
+| `umount /mnt/LVname`                   | Unmount                                                               |
+
+### Create
+
+| Command                                           | Description                                                       |
+| ------------------------------------------------- | ----------------------------------------------------------------- |
+| `pvcreate /dev/DiskName`                          | Initialize physical volume disks                                  |
+| `pvmove /dev/source /dev/destination`             | Move LVM data. Destination is optional                            |
+| `lvcreate -L [size][unit] -n LVname VGname`       | Create a logical volume (ex: `lvcreate -L 50m -n workspace myVG`) |
+| `lvcreate -l 100%FREE -n name VGname`             | Create logical volume with all the free space in VG               |
+| `lvextend -r -L +[size][unit] /dev/VGname/LVname` | Extend existing LV                                                |
+| `lvextend -r -l +100%FREE /dev/VGname/LVname`     | Extend existing LV with all free space                            |
+| `vgextend VGname /dev/DiskName`                   | Extend existing VG                                                |
+
+### Remove
+
+| Command                                       | Description                  |
+| --------------------------------------------- | ---------------------------- |
+| `e2fsck -f /dev/VGname/LVname`                | Check filesystem             |
+| `resize2fs /dev/VGname/LVname [size][unit]`   | Resize disk to specific size |
+| `lvreduce -L [size][unit] /dev/VGname/LVname` | Resize LV to specific size   |
+| `lvremove /dev/VGname/LVname`                 | Remove LV                    |
+| `vgreduce VGname /dev/DiskName`               | Remove disk from VG          |
+| `pvremove /dev/DiskName`                      | Remove PV metadata from disk |
