@@ -126,8 +126,6 @@ tee --> file[file.txt]
 | `cat /etc/fstab` | Display automatic mounts at boot   |
 | `netstat -tulpn` | Display network connections        |
 
-
-
 ## Scheduling
 | Command                                              | Description                                          |
 | ---------------------------------------------------- | ---------------------------------------------------- |
@@ -152,7 +150,7 @@ tee --> file[file.txt]
 | `zip [name].zip [files]...`      | Create zip                                                                     |
 | `unzip [archive].zip`            | Unarchive                                                                      |
 
-## File Permissions
+## Permissions
 
 Print details: `ls -l`
 
@@ -205,22 +203,36 @@ Multiple owners:
 
 ## Mount
 
-| Command                                | Description                                                           |
-| -------------------------------------- | --------------------------------------------------------------------- |
-| `lsblk`                                | Display mounts                                                        |
-| `lvmdiskscan`                          | All block devices LVM can interact with will have LVM text at the end |
-| `fdisk`                                | Partition the disk                                                    |
-| `pvs`                                  | Display all LVM PVs (Physical Volumes) and the VG they are part of    |
-| `vgs`                                  | Display all VGs (Volume Groups)                                       |
-| `vgs -o +lv_size,lv_volume`            | Display  all logical volumes and the relationship with volume group   |
-| `lvs`                                  | Display all LVs (Logical Volumes)                                     |
-| `mount /dev/VGname/LVname /mnt/LVname` | Mount LV to point                                                     |
-| `umount /mnt/LVname`                   | Unmount                                                               |
+| Command                     | Description                                                           |
+| --------------------------- | --------------------------------------------------------------------- |
+| `lsblk`                     | Display mounts                                                        |
+| `lvmdiskscan`               | All block devices LVM can interact with will have LVM text at the end |
+| `fdisk`                     | Partition the disk                                                    |
+| `pvs`                       | Display all LVM PVs (Physical Volumes) and the VG they are part of    |
+| `vgs`                       | Display all VGs (Volume Groups)                                       |
+| `vgs -o +lv_size,lv_volume` | Display  all logical volumes and the relationship with volume group   |
+| `lvs`                       | Display all LVs (Logical Volumes)                                     |
 
-### Create
+### LVM (Logical Volume Manager)
+
+```mermaid
+flowchart TD;
+
+PV1[Physical Volume] --> VG1[Volume Group] --> LG1[Logical Volume] --> FS1[File System]
+
+PV2[Physical Volume] --> VG1
+PV3[Physical Volume] --> VG1 
+
+VG1 --> LG2[Logical Volume]
+
+LG2 --> FS2[File System]
+```
+
+### Add/Modify
 
 | Command                                           | Description                                                       |
 | ------------------------------------------------- | ----------------------------------------------------------------- |
+| `mount /dev/VGname/LVname /mnt/LVname`            | Mount LV to point                                                 |
 | `pvcreate /dev/DiskName[n]`                       | Initialize physical volume disks                                  |
 | `pvmove /dev/source /dev/destination`             | Move LVM data. Destination is optional                            |
 | `vgcreate VGname /dev/DiskName[n]`                | Create VG and add volumes                                         |
@@ -232,11 +244,11 @@ Multiple owners:
 | `mkfs.[format] /dev/VGname/LVname`                | Format volume (ex: mkfs.ext4)                                     |
 | `mkdir -p /mnt/LVname`                            | Create mount point for LV                                         |
 
-
 ### Remove
 
 | Command                                       | Description                  |
 | --------------------------------------------- | ---------------------------- |
+| `umount /mnt/LVname`                          | Unmount                      |
 | `e2fsck -f /dev/VGname/LVname`                | Check filesystem             |
 | `resize2fs /dev/VGname/LVname [size][unit]`   | Resize disk to specific size |
 | `lvreduce -L [size][unit] /dev/VGname/LVname` | Resize LV to specific size   |
