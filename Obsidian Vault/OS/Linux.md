@@ -89,7 +89,7 @@ tee --> file[file.txt]
 | `?`            | Matches anything for only 1 character                    |
 | `[]`           | Matches the options inside for only 1 character          |
 | `[1-9]`        | Matches any number from 1 to 9 for only 1 character      |
-| `{}`           | [領域展開](https://youtu.be/x9EI1aLFfAo)                     |
+| `{}`           | Expand/Go through list                                   |
 | `{2019..2024}` | Expands what it is inside. All numbers from 2019 to 2024 |
 | `{1,2}_{A,B}`  | Combinations. Will have 4 results                        |
 
@@ -154,7 +154,8 @@ tee --> file[file.txt]
 
 ## File Permissions
 
-`ls -l`
+Print details: `ls -l`
+
 $\underbrace{-}\_{\text{First}}\,\underbrace{---}\_{\text{Owner:rwx}}\,\underbrace{---}\_{\text{Group:rwx}}\,\underbrace{---}\_{\text{Others:rwx}}, user, group$
 
 
@@ -174,32 +175,33 @@ Permissions:
 + Execute(`x`) = `1`
 
 Examples:
-`chmod 755 filename`=> Owner(`4`+`2`+`1`)=full access, Group and Others(`1`+`4`)=`read and execute`
-It is the same thing as:
-`chmod u+rwx,g+rx,o+rx filename`
+- `chmod 755 filename`=> Owner(`4`+`2`+`1`)=full access, Group and Others(`1`+`4`)=`read and execute`
+- It is the same thing as: `chmod u+rwx,g+rx,o+rx filename`
 
 ### Owners
-Single owner:
-`chown username:groupname /path/to/file` (Username/Groupname can be left empty if not needed) ex: `chown :mygroup`
+Single owner: `chown username:groupname /path/to/file`
+- UserName/GroupName can be left empty if not needed
+	- `chown :mygroup /path/to/file`
+	- `chown myuser /path/to/file`
 
 Multiple owners:
-Add group: `setfacl -m g:groupx:rw filename`
-Add user: `setfacl -m u:username:rw filename`
-Remove group: `setfacl -x g:groupx filename`
-Remove ACL: `setfacl -b filename`
-Print owners: `getfacl filename`
+- Add group: `setfacl -m g:groupx:rw filename`
+- Add user: `setfacl -m u:username:rw filename`
+- Remove group: `setfacl -x g:groupx filename`
+- Remove ACL: `setfacl -b filename`
+- Print owners: `getfacl filename`
 
 ### Users
-Create user: `adduser username`
-Delete user: `deluser --remove-home username`
+- Create user: `adduser username`
+- Delete user: `deluser --remove-home username`
 ### Groups
-View all groups: `groups`
-View all groups for a specific user: `groups username`
-View all users for a  specific group: `getent group groupname`
-Create group: `groupadd groupname`
-Delete group: `groupdel groupname`
-Add user to group: `usermod -aG groupname username`
-Remove user from group: `gpasswd -d username groupname`
+- View all groups: `groups`
+- View all groups for a specific user: `groups username`
+- View all users for a  specific group: `getent group groupname`
+- Create group: `groupadd groupname`
+- Delete group: `groupdel groupname`
+- Add user to group: `usermod -aG groupname username`
+- Remove user from group: `gpasswd -d username groupname`
 
 ## Mount
 
@@ -212,8 +214,6 @@ Remove user from group: `gpasswd -d username groupname`
 | `vgs`                                  | Display all VGs (Volume Groups)                                       |
 | `vgs -o +lv_size,lv_volume`            | Display  all logical volumes and the relationship with volume group   |
 | `lvs`                                  | Display all LVs (Logical Volumes)                                     |
-| `mkfs.[format] /dev/VGname/LVname`     | Format volume (ex: mkfs.ext4)                                         |
-| `mkdir -p /mnt/LVname`                 | Create mount point for LV                                             |
 | `mount /dev/VGname/LVname /mnt/LVname` | Mount LV to point                                                     |
 | `umount /mnt/LVname`                   | Unmount                                                               |
 
@@ -221,13 +221,17 @@ Remove user from group: `gpasswd -d username groupname`
 
 | Command                                           | Description                                                       |
 | ------------------------------------------------- | ----------------------------------------------------------------- |
-| `pvcreate /dev/DiskName`                          | Initialize physical volume disks                                  |
+| `pvcreate /dev/DiskName[n]`                       | Initialize physical volume disks                                  |
 | `pvmove /dev/source /dev/destination`             | Move LVM data. Destination is optional                            |
+| `vgcreate VGname /dev/DiskName[n]`                | Create VG and add volumes                                         |
+| `vgextend VGname /dev/DiskName`                   | Extend existing VG                                                |
 | `lvcreate -L [size][unit] -n LVname VGname`       | Create a logical volume (ex: `lvcreate -L 50m -n workspace myVG`) |
 | `lvcreate -l 100%FREE -n name VGname`             | Create logical volume with all the free space in VG               |
 | `lvextend -r -L +[size][unit] /dev/VGname/LVname` | Extend existing LV                                                |
 | `lvextend -r -l +100%FREE /dev/VGname/LVname`     | Extend existing LV with all free space                            |
-| `vgextend VGname /dev/DiskName`                   | Extend existing VG                                                |
+| `mkfs.[format] /dev/VGname/LVname`                | Format volume (ex: mkfs.ext4)                                     |
+| `mkdir -p /mnt/LVname`                            | Create mount point for LV                                         |
+
 
 ### Remove
 
