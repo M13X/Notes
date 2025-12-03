@@ -125,6 +125,22 @@ tee --> file[file.txt]
 | `lsblk`          | Display mounts                     |
 | `cat /etc/fstab` | Display automatic mounts at boot   |
 | `netstat -tulpn` | Display network connections        |
+## Package manager
+
+| Command                                                                         | Description                                                              |
+| ------------------------------------------------------------------------------- | ------------------------------------------------------------------------ |
+| `dpkg`                                                                          | Low-level, installs only local .deb packages and no dependencies         |
+| `apt-get`                                                                       | Access to repositories for ease to install dependencies. Script friendly |
+| `apt`                                                                           | End user optimized with nice output                                      |
+| ```dpkg -l<br>apt list (--installed)```                                         | List (installed) packages                                                |
+| ```<br>apt show -a [package]<br>apt-cache madison [package]<br>```              | List available versions for package to be installed                      |
+| ```apt-cache policy [package]<br>apt list [package]<br><br>dpkg -s [package]``` | List info about specific installed package                               |
+| `apt-mark (un)hold [package]`                                                   | (Un)Lock package                                                         |
+| `apt-mark showhold`                                                             | List locked packages                                                     |
+| `apt update`                                                                    | Update repository list                                                   |
+| `apt upgrade ([package])`                                                       | Upgrade all/specified package(s) to latest version                       |
+| ```<br>dpkg -i [package].deb<br>apt install [package](=versionID)```            | Install package                                                          |
+| `apt-cache depends [package]`                                                   | Displays package dependencies                                            |
 
 ## Scheduling
 | Command                                              | Description                                          |
@@ -156,7 +172,6 @@ Print details: `ls -l`
 
 $\underbrace{-}\_{\text{First}}\,\underbrace{---}\_{\text{Owner:rwx}}\,\underbrace{---}\_{\text{Group:rwx}}\,\underbrace{---}\_{\text{Others:rwx}}, user, group$
 
-
 First:
 + regular file: `-`
 + directory: `d`
@@ -183,15 +198,17 @@ Single owner: `chown username:groupname /path/to/file`
 	- `chown myuser /path/to/file`
 
 Multiple owners:
-- Add group: `setfacl -m g:groupx:rw filename`
-- Add user: `setfacl -m u:username:rw filename`
+- Add group: `setfacl -m g:groupx:rwx filename`
+- Add user: `setfacl -m u:username:rwx filename`
 - Remove group: `setfacl -x g:groupx filename`
 - Remove ACL: `setfacl -b filename`
 - Print owners: `getfacl filename`
 
 ### Users
+- View all users: `getent passwd`
 - Create user: `adduser username`
 - Delete user: `deluser --remove-home username`
+- Set password: `passwd username`
 ### Groups
 - View all groups: `groups`
 - View all groups for a specific user: `groups username`
