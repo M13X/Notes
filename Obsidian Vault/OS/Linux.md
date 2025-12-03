@@ -127,20 +127,20 @@ tee --> file[file.txt]
 | `netstat -tulpn` | Display network connections        |
 ## Package manager
 
-| Command                                                                         | Description                                                              |
-| ------------------------------------------------------------------------------- | ------------------------------------------------------------------------ |
-| `dpkg`                                                                          | Low-level, installs only local .deb packages and no dependencies         |
-| `apt-get`                                                                       | Access to repositories for ease to install dependencies. Script friendly |
-| `apt`                                                                           | End user optimized with nice output                                      |
-| ```dpkg -l<br>apt list (--installed)```                                         | List (installed) packages                                                |
-| ```<br>apt show -a [package]<br>apt-cache madison [package]<br>```              | List available versions for package to be installed                      |
-| ```apt-cache policy [package]<br>apt list [package]<br><br>dpkg -s [package]``` | List info about specific installed package                               |
-| `apt-mark (un)hold [package]`                                                   | (Un)Lock package                                                         |
-| `apt-mark showhold`                                                             | List locked packages                                                     |
-| `apt update`                                                                    | Update repository list                                                   |
-| `apt upgrade ([package])`                                                       | Upgrade all/specified package(s) to latest version                       |
-| ```<br>dpkg -i [package].deb<br>apt install [package](=versionID)```            | Install package                                                          |
-| `apt-cache depends [package]`                                                   | Displays package dependencies                                            |
+| Command                                                                     | Description                                                              |
+| --------------------------------------------------------------------------- | ------------------------------------------------------------------------ |
+| `dpkg`                                                                      | Low-level, installs only local .deb packages and no dependencies         |
+| `apt-get`                                                                   | Access to repositories for ease to install dependencies. Script friendly |
+| `apt`                                                                       | End user optimized with nice output                                      |
+| `dpkg -l`<br>`apt list (--installed)`                                       | List (installed) packages                                                |
+| `apt show -a [package]`<br>`apt-cache madison [package]`                    | List available versions for package to be installed                      |
+| `apt-cache policy [package]`<br>`apt list [package]`<br>`dpkg -s [package]` | List info about specific installed package                               |
+| `apt-mark (un)hold [package]`                                               | (Un)Lock package                                                         |
+| `apt-mark showhold`                                                         | List locked packages                                                     |
+| `apt update`                                                                | Update repository list                                                   |
+| `apt upgrade ([package])`                                                   | Upgrade all/specified package(s) to latest version                       |
+| `dpkg -i [package].deb`<br>`apt install [package](=versionID)`              | Install package                                                          |
+| `apt-cache depends [package]`                                               | Displays package dependencies                                            |
 
 ## Scheduling
 | Command                                              | Description                                          |
