@@ -115,16 +115,35 @@ tee --> file[file.txt]
 
 ## Monitoring
 
-| Command          | Description                        |
-| ---------------- | ---------------------------------- |
-| `df`             | Display disk space                 |
-| `du`             | Display disk occupied by files     |
-| `free`           | Display RAM status                 |
-| `top`            | Task manager. Press h for commands |
-| `ps`             | List running processes             |
-| `lsblk`          | Display mounts                     |
-| `cat /etc/fstab` | Display automatic mounts at boot   |
-| `netstat -tulpn` | Display network connections        |
+| Command            | Description                        |
+| ------------------ | ---------------------------------- |
+| `df`               | Display disk space                 |
+| `du`               | Display disk occupied by files     |
+| `iostat [seconds]` | Display disk workload              |
+| `free`             | Display RAM status                 |
+| `vmstat [seconds]` | Display virtual memory performance |
+| `top`              | Task manager. Press h for commands |
+| `ps`               | List running processes             |
+| `cat /etc/fstab`   | Display automatic mounts at boot   |
+| `netstat -tulpn`   | Display network connections        |
+### System Information
+
+> [!NOTE]
+> Starting with `/` are files instead of commands.
+
+| Command                            | Description                   |
+| ---------------------------------- | ----------------------------- |
+| `lsb_release -a` / `/etc/*release` | OS information                |
+| `uname [-r]` / `/proc/version`     | Kernel version                |
+| `/proc/cpuinfo`                    | File with CPU information     |
+| `lscpu`                            | List CPU information          |
+| `/proc/meminfo`                    | File with RAM information     |
+| `lsblk`                            | List block storage devices    |
+| `lshw [-html]/[-short]`            | List all hardware information |
+| `lsusb`                            | List USB devices              |
+| `lspci`                            | List PCI devices              |
+| `ip a`                             | Network interface information |
+
 ## Package manager
 
 | Command                                                                     | Description                                                              |
@@ -187,10 +206,28 @@ Permissions:
 + Write(`w`) = `2`
 + Execute(`x`) = `1`
 
+Special permissions:
+> [!NOTE]
+> Lowercase letter represents that `x` permission is also available and uppercase represents that `x` is not available
+ 
+| Permission | Symbolic | Octal | Effect on Files     | Effect on Directories               |
+| ---------- | -------- | ----- | ------------------- | ----------------------------------- |
+| SUID       | `u+s`    | `4`   | Run as file owner   | -                                   |
+| SGID       | `g+s`    | `2`   | Run as file's group | New files inherit directory's group |
+| Sticky Bit | `o+t`    | `1`   | -                   | Only owner can delete files         |
+
 Examples:
 - `chmod 755 filename`=> Owner(`4`+`2`+`1`)=full access, Group and Others(`1`+`4`)=`read and execute`
-- It is the same thing as: `chmod u+rwx,g+rx,o+rx filename`
+- It is the same thing as: `chmod u+rwx,g+rx,o+rx <filename>`
+- Special permissions `chmod 7666 <filename>` => `-rwSrwSrwT`
+- It's the same thing as: `chmod u+rws,g+rws,o+rwt <filename>`
 
+### Sudo
+
+- Access sudo rights: `sudo visudo`
+- Structure: `<user/group> <hosts> = (<run_as_users>:<run_as_groups>) [NOPASSWD:] <commands>` 
+	- Example: `john ALL=(docker) /usr/bin/docker *`
+	- john can impersonate the user docker to run any docker command: `sudo -u docker /usr/bin/docker images`
 ### Owners
 Single owner: `chown username:groupname /path/to/file`
 - UserName/GroupName can be left empty if not needed
